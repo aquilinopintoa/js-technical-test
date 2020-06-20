@@ -1,14 +1,14 @@
 {
-  "name": "tecnical-test",
+  "name": "technical-test",
   "version": "1.0.0",
-  "description": "tecnical test to JS",
+  "description": "technical test to JS",
   "main": "index.js",
   "scripts": {
     "test": "test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aquilinopintoa/js-tecnical-test.git"
+    "url": "git+https://github.com/aquilinopintoa/js-technical-test.git"
   },
   "keywords": [
     "js"
