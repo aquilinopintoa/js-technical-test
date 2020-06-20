@@ -1,10 +1,6 @@
-function distanceHandler(p1, p2, cb) {
-    const X = 4;
+const distanceHandler = (function (p1, p2, cb) {
 
-    if (this.progress === undefined) this.progress = 0;
-    if (this.queue === undefined) this.queue = [];
-
-    if (this.progress < X) {
+    if (this.progress < this.concurrencyLimit) {
         this.progress++;
         distance(p1, p2, (result) => {
             this.progress--;
@@ -24,12 +20,16 @@ function distanceHandler(p1, p2, cb) {
             cb
         })
     }
-}
+}).bind({
+    progress: 0,
+    queue: [],
+    concurrencyLimit: 2
+})
 
 function distance(p1, p2, cb) {
     setTimeout(() => {
         cb(p1 - p2);
-    }, 0.1 * 1000)
+    }, 1 * 1000)
 }
 
 function print(result) {
