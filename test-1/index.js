@@ -38,12 +38,26 @@ const sendEmailToUsers = (userIds) => {
     userIds.forEach((userId) => {
         getUserById(userId)
             .then((userData) => {
-                sendEmail(userData.Email)
-                    .then((result) => {
-                        console.log(result)
-                    })
+                if (userData && userData.Email) {
+                    sendEmail(userData.Email)
+                        .then((result) => {
+                            console.log(result)
+                        })
+                }
             })
     })
 }
 
+const sendEmailToUsersWithAsync = (userIds) => {
+    userIds.forEach(async (userId) => {
+        const userData = await getUserById(userId);
+
+        if (userData && userData.Email) {
+            const result = await sendEmail(userData.Email);
+            console.log(userData.Email, result);
+        }
+    })
+}
+
 sendEmailToUsers(users);
+// sendEmailToUsersWithAsync(users);
