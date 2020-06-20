@@ -1,24 +1,24 @@
 function distanceHandler(p1, p2, cb) {
     const X = 4;
 
-    if (this.P === undefined) this.P = 0;
-    if (this.W === undefined) this.W = [];
+    if (this.progress === undefined) this.progress = 0;
+    if (this.queue === undefined) this.queue = [];
 
-    if (this.P < X) {
-        this.P++;
+    if (this.progress < X) {
+        this.progress++;
         distance(p1, p2, (result) => {
-            this.P--;
+            this.progress--;
 
-            if (this.W.length) {
-                const w = this.W[0]
-                this.W = this.W.slice(1, this.W.length);
-                distanceHandler(w.p1, w.p2, w.cb);
+            if (this.queue.length) {
+                const next = this.queue[0]
+                this.queue = this.queue.slice(1, this.queue.length);
+                distanceHandler(next.p1, next.p2, next.cb);
             }
 
             cb(result)
         })
     } else {
-        this.W.push({
+        this.queue.push({
             p1,
             p2,
             cb
