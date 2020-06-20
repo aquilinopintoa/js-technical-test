@@ -4,7 +4,7 @@
   "description": "technical test to JS",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/aquilinopintoa/js-tecnical-test/issues"
   },
-  "homepage": "https://github.com/aquilinopintoa/js-tecnical-test#readme"
+  "homepage": "https://github.com/aquilinopintoa/js-tecnical-test#readme",
+  "devDependencies": {
+    "jest": "^26.0.1"
+  }
 }
