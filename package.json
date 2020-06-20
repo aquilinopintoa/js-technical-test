@@ -4,6 +4,9 @@
   "description": "technical test to JS",
   "main": "index.js",
   "scripts": {
+    "test-1": "node ./test-1",
+    "test-2": "node ./test-2",
+    "test-3": "node ./test-3",
     "test": "jest"
   },
   "repository": {
