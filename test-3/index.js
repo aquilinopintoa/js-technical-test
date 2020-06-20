@@ -29,7 +29,7 @@ function distanceHandler(p1, p2, cb) {
 function distance(p1, p2, cb) {
     setTimeout(() => {
         cb(p1 - p2);
-    }, 1 * 1000)
+    }, 0.1 * 1000)
 }
 
 function print(result) {
@@ -40,14 +40,5 @@ function print(result) {
 distanceHandler(1, 2, print);
 distanceHandler(1, 3, print);
 distanceHandler(1, 4, print);
-distanceHandler(1, 5, print);
-distanceHandler(1, 7, print);
-distanceHandler(1, 9, print);
-distanceHandler(1, 2, print);
-distanceHandler(1, 3, print);
-distanceHandler(1, 4, print);
-distanceHandler(1, 5, print);
-distanceHandler(1, 7, print);
-distanceHandler(1, 9, print);
 
 
